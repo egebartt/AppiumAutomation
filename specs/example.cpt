@@ -1,0 +1,57 @@
+Created by testinium on 12/26/2022
+
+This is a concept file with following syntax for each concept.
+
+
+
+# Uygulamanın açıldığı kontrol edilir
+* "com.m.qr:id/action_bar_root" 'li id elementin görünür olup olmadığını kontrol et
+
+# Karşılama ekranı “Skip” seçeneği ile geçilir
+* "com.m.qr:id/skip_button" 'li id elementi ekranda görünüyorsa tıkla
+* "com.m.qr:id/onboarding_skip_button" 'li id elementi ekranda görünüyorsa tıkla
+* "com.m.qr:id/push_consent_decline" 'li id elementi ekranda görünüyorsa tıkla
+
+# Alt menüden “Book” tabına geçiş yapılır
+* "//android.widget.FrameLayout[@content-desc=\"Book\"]/android.view.ViewGroup/android.widget.TextView" 'li xpath elementi ekranda görünüyorsa tıkla
+
+# Seyehat tipi olarak “One Way” seçilir
+* "//android.widget.LinearLayout[@content-desc='One-way']" 'li xpath elementi ekranda görünüyorsa tıkla
+
+# Kalkış havaalanı olarak Berlin seçilir
+* "//*[@text=\"From\"]" 'li xpath elementi ekranda görünüyorsa tıkla
+* "com.m.qr:id/rvmp_fragment_ond_selection_filter_edittext" 'li id elementine tıkla, "berlin" değerini gir
+* "//*[@resource-id=\"com.m.qr:id/rvmp_fragment_ond_selection_stations_list\"]/android.view.ViewGroup[1]" 'li xpath elementi ekranda görünüyorsa tıkla
+
+# Varış havaalanı olarak Istanbul seçilir
+* "//*[@text=\"To\"]" 'li xpath elementi ekranda görünüyorsa tıkla
+* "com.m.qr:id/rvmp_fragment_ond_selection_filter_edittext" 'li id elementine tıkla, "istanbul" değerini gir
+* "//*[@resource-id=\"com.m.qr:id/rvmp_fragment_ond_selection_stations_list\"]/android.view.ViewGroup[1]" 'li xpath elementi ekranda görünüyorsa tıkla
+
+# (Bugünün tarihi + 7 gün) olarak bir gidiş tarihi seçilir
+
+* "com.m.qr:id/rvmp_fragment_rtow_flight_selection_departure_date_holder" 'li id elementi ekranda görünüyorsa tıkla
+* "(//android.widget.TextView[@clickable='true'])[1]" 'li xpath elementi ekranda görünüyorsa tıkla
+* Şuanki günden 7 gün sonrasına tarih seçilir
+* "com.m.qr:id/fragment_calendar_confirm_button" 'li id elementi ekranda görünüyorsa tıkla
+
+# Economy class seçeneğine tıklanır
+* "com.m.qr:id/fragment_rtow_flight_cabin_class_text_view" 'li id elementi ekranda görünüyorsa tıkla
+* "//android.widget.TextView[@text='Economy']" 'li xpath elementi ekranda görünüyorsa tıkla
+* "//android.widget.TextView[@text='Economy']" 'li xpath elementi ekranda görünüyorsa tıkla
+
+# Arama butonuna tıklanır
+* "//android.widget.Button[@text='Search flights']" 'li xpath elementi ekranda görünüyorsa tıkla
+
+
+# Uçuş seçim ekranının geldiği kontrol edilir
+* "com.m.qr:id/rvmp_fare_message" 'li id elementin görünür olup olmadığını kontrol et
+
+# Rastgele bir uçuş seçilir.
+* "//androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup" 'li uçuşlardan rastgele seç ve "android.widget.TextView[1]" ile "android.widget.TextView[2]" değerlerini kaydet
+
+# Uçuş seçim ekranındaki uçuş saati ile uçuş detayları ekranındaki uçuş saati değeri aynı mı kontrol edilir
+* "//android.widget.TextView[@text='Flight details']" 'li xpath elementi ekranda görünüyorsa tıkla
+* "//android.view.ViewGroup[1]/android.widget.TextView[@resource-id='com.m.qr:id/rvmp_item_flight_details_start_time']" ile "//android.view.ViewGroup[2]/android.widget.TextView[@resource-id='com.m.qr:id/rvmp_item_flight_details_end_time']" sondaki uçuş saatleri verileri
+* Uçuş ve varış saatlerinin uyuşması kontrolü
+
